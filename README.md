@@ -1,4 +1,4 @@
-# React App Karma DOM Tests
+# React DOM Tests in a Real Browser
 
 This repo uses Karma to launch **real instances of Chrome instead of using Jest+JSDOM**!
 
