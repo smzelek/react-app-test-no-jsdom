@@ -27,7 +27,13 @@ module.exports = function (config) {
       }
     },
     files: [
-      "**/*.test.tsx",
+      "src/index.css",
+      "**/*.spec.tsx",
+      {
+        pattern: 'public/**/*',
+        included: false,
+        watched: false,
+      },
       // https://github.com/ryanclark/karma-webpack/issues/498
       {
         pattern: `${outputPath}/**/*`,
@@ -37,7 +43,10 @@ module.exports = function (config) {
     ],
     exclude: [],
     preprocessors: {
-      "**/*.test.tsx": ["webpack"],
+      "**/*.spec.tsx": ["webpack"],
+    },
+    proxies: {
+      '/assets/': 'http://localhost:9876/base/public/assets/',
     },
     webpack: {
       mode: "development",
