@@ -10,7 +10,7 @@ fit("<App />", async () => {
   render(
     <App name='React Test'/>
   )
-  await sleep(122400);
+  await sleep(3000);
   const text = screen.getByText('Learn React');
   expect(text).toBeTruthy();
 });
